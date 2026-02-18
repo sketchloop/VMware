@@ -22,33 +22,18 @@ A **native Chrome OS application** that installs like any other app. Download, r
 
 ## 🚀 Quick Start
 
-### For Chrome OS Users:
+### All Platforms - One Click:
 
-```bash
-# 1. Extract the downloaded file
-# 2. Open terminal in the folder
-# 3. Run:
-./RUN.sh
+1. **Extract** the downloaded file to any folder
+2. **Double-click** the launcher for your OS:
+   - **Windows**: `RUN.bat`
+   - **macOS**: `RUN.command`
+   - **Chrome OS / Linux**: `RUN.sh`
+3. **Wait** 3 seconds - the app opens automatically in your browser
+4. **Click Install** button to add to your app drawer (native app)
+5. **Done!** App now launches like any other app on your system
 
-# 4. App opens in browser
-# 5. Click install button
-# 6. App now appears in your app drawer!
-```
-
-### For Windows:
-```bash
-# Double-click: RUN.bat
-```
-
-### For macOS:
-```bash
-# Double-click: RUN.command
-```
-
-### For Linux:
-```bash
-chmod +x RUN.sh && ./RUN.sh
-```
+That's it. No terminal. No complicated setup. Just download, extract, double-click.
 
 ## 📋 System Requirements
 
@@ -60,11 +45,11 @@ chmod +x RUN.sh && ./RUN.sh
 
 ## 🎯 How It Works
 
-1. **Download** the app package
-2. **Extract** to any folder
-3. **Run** the launcher script for your OS
-4. **Install** as native app (one click)
-5. **Launch** from your app drawer anytime
+1. **Download** the app package and extract it
+2. **Double-click** the launcher file (`RUN.sh`, `RUN.bat`, or `RUN.command`)
+3. **Browser opens** automatically with your app running
+4. **Click Install** to add it as a native app to your system
+5. **Launch anytime** from your app drawer, just like any other app
 
 ## 🏗️ Architecture
 
@@ -86,17 +71,19 @@ This is a **Progressive Web App**, which means:
 
 ## 🔧 Installation Methods
 
-### Method 1: Install Button
-1. Open http://localhost:5000
-2. Click install button in browser
-3. Confirm installation
-4. Done!
+After the app launches, you have two options to install it as a native app:
 
-### Method 2: Chrome Menu
-1. Open http://localhost:5000
-2. Click ⋮ (three dots)
-3. Select "Install Chrome OS VM Manager"
-4. Confirm
+### Option 1: Install Button (Easiest)
+- Look for the **"Install App"** button in the browser
+- Click it
+- Confirm when prompted
+- Done! App now appears in your app drawer
+
+### Option 2: Browser Menu
+- Click the **⋮** (three dots) menu in Chrome
+- Select **"Install Chrome OS VM Manager"**
+- Confirm
+- App is now installed
 
 ### Method 3: From App Drawer
 1. App automatically appears in app drawer

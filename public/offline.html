@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1f2937" />
+    <title>Offline - VM Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .status {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 15px;
+            text-align: left;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        
+        .status-text {
+            color: #b91c1c;
+            font-weight: 500;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .retry-btn {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .retry-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        .home-btn {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+        
+        .home-btn:hover {
+            background: #d1d5db;
+        }
+        
+        .tips {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        
+        .tips h3 {
+            color: #1f2937;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .tips ul {
+            list-style: none;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .tips li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .tips li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">🌐</div>
+        <h1>You're Offline</h1>
+        <p>Can't connect to the VM Manager server. Check your connection and try again.</p>
+        
+        <div class="status">
+            <div class="status-text">⚠️ No network connection</div>
+        </div>
+        
+        <div class="actions">
+            <button class="retry-btn" onclick="location.reload()">🔄 Retry</button>
+            <button class="home-btn" onclick="goHome()">🏠 Go Home</button>
+        </div>
+        
+        <div class="tips">
+            <h3>💡 Troubleshooting Tips</h3>
+            <ul>
+                <li>Check your internet connection</li>
+                <li>Verify the app server is running</li>
+                <li>Make sure localhost:5000 is accessible</li>
+                <li>Try refreshing the page</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function goHome() {
+            window.location.href = '/';
+        }
+        
+        // Auto-retry every 3 seconds
+        setInterval(() => {
+            fetch('/').then(() => {
+                console.log('✅ Connection restored!');
+                window.location.reload();
+            }).catch(() => {
+                console.log('⚠️ Still offline...');
+            });
+        }, 3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+================================================================================
+   BUILD STANDALONE EXECUTABLES - DEVELOPER GUIDE
+================================================================================
+
+This guide explains how to build the standalone executables from the source
+code. Users don't need to follow this - they just download and run!
+
+
+WHAT IS A STANDALONE EXECUTABLE?
+================================================================================
+
+A standalone executable is a single file that:
+- Contains the entire Node.js runtime
+- Includes all dependencies pre-bundled
+- Works without any installation
+- No need for users to download Node.js or npm
+- Just download and run!
+
+
+PREREQUISITES (Developers Only)
+================================================================================
+
+Before building, you need:
+- Node.js 16+ installed: https://nodejs.org/
+- npm (comes with Node.js)
+- Git (for cloning the repository)
+
+
+BUILD PROCESS FOR DEVELOPERS
+================================================================================
+
+Step 1: Clone and Install
+-------------------------
+   git clone https://github.com/sketchloop/VMware.git
+   cd VMware
+   npm install
+
+
+Step 2: Build Frontend
+---------------------
+   npm run build:frontend
+
+   This compiles React and creates dist/
+
+
+Step 3: Build Backend
+---------------------
+   npm run build:backend
+
+   This compiles TypeScript and creates backend/
+
+
+Step 4: Create Standalone Executables
+--------------------------------------
+
+   To create executables for ALL platforms:
+   
+   npm run build:standalone
+
+   This automatically creates:
+   - dist/chromeos-vm-manager-win.exe (Windows 64-bit)
+   - dist/chromeos-vm-manager-linux (Linux 64-bit)
+   - dist/chromeos-vm-manager-mac (macOS 64-bit)
+
+
+Individual Platform Builds
+--------------------------
+
+   Windows only:
+   npm run bundle:win
+   
+   Linux only:
+   npm run bundle:linux
+   
+   macOS only:
+   npm run bundle:mac
+
+
+Step 5: Package for Distribution
+---------------------------------
+
+Once you have the executables, create distribution packages:
+
+   For Windows:
+   - Copy chromeos-vm-manager-win.exe to a new folder
+   - Copy RUN.bat to the same folder
+   - Zip it as: chromeos-vm-manager-v1.0-windows.zip
+
+   For Linux:
+   - Copy chromeos-vm-manager-linux to a new folder
+   - Copy RUN.sh to the same folder
+   - Run: chmod +x RUN.sh
+   - Create tarball: tar -czf chromeos-vm-manager-v1.0-linux.tar.gz folder/
+
+   For macOS:
+   - Copy chromeos-vm-manager-mac to a new folder
+   - Copy RUN.command to the same folder
+   - Run: chmod +x RUN.command
+   - Create DMG or ZIP for distribution
+
+
+EXECUTABLE SIZE
+================================================================================
+
+Note: The executables are large (50-100MB each) because they include:
+- Node.js runtime
+- Express.js and all dependencies
+- React and webpack bundles
+- All configuration and static files
+
+This is normal and expected for standalone executables.
+
+
+TESTING THE EXECUTABLE
+================================================================================
+
+Before distributing, test on each platform:
+
+   Windows:
+   1. Extract the zip file
+   2. Double-click RUN.bat
+   3. Verify browser opens to http://localhost:5000
+
+   Linux:
+   1. Extract the tar.gz file
+   2. chmod +x RUN.sh
+   3. ./RUN.sh
+   4. Verify browser opens
+
+   macOS:
+   1. Extract the zip file
+   2. Double-click RUN.command
+   3. Verify browser opens
+
+
+TROUBLESHOOTING BUILD ISSUES
+================================================================================
+
+Error: "pkg not found"
+Solution:
+   npm install -g pkg
+
+
+Error: "PORT already in use"
+Solution:
+   Edit config/.env and change PORT to a different number
+
+
+Build takes too long
+Solution:
+   This is normal - first build can take 5-10 minutes
+   Subsequent builds are faster
+
+
+Large executable size
+Solution:
+   This is expected and normal - executables include Node.js runtime
+
+
+DISTRIBUTION CHECKLIST
+================================================================================
+
+Before releasing standalone executables:
+
+[ ] Built executables for all 3 platforms
+[ ] Tested each executable on actual OS
+[ ] Verified browser opens automatically
+[ ] Verified API connections work
+[ ] Created distribution packages with launchers
+[ ] Included SETUP.txt in package
+[ ] Tested extraction and first-time run
+[ ] Confirmed file permissions are correct
+[ ] Documented version number
+[ ] Tested on clean systems (no dependencies pre-installed)
+
+
+RELEASING NEW VERSIONS
+================================================================================
+
+To build a new version:
+
+1. Update version in package.json
+2. npm install (to update dependencies if needed)
+3. npm run build:standalone
+4. Test on all platforms
+5. Create distribution packages
+6. Upload to GitHub Releases
+7. Update documentation
+
+
+================================================================================
+Questions? Check:
+- Package.json for available scripts
+- .gitignore for files to exclude
+- GitHub issues for known problems
+
+Version: 1.0.0
+Last Updated: February 2026
+================================================================================

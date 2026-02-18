@@ -1,0 +1,155 @@
+================================================================================
+   CHROMEOS VM MANAGER - NATIVE APP SETUP
+   Progressive Web App (PWA) Optimized for Chrome OS
+   
+   STANDALONE APPLICATION - ONE CLICK INSTALL
+================================================================================
+
+
+INSTALLATION (Choose Your OS)
+================================================================================
+
+CHROME OS:
+1. Download and extract the app
+2. Double-click RUN.sh or run in terminal: ./RUN.sh
+3. Browser opens to http://localhost:5000
+4. Click install button in app or use Chrome menu:
+   ⋮ → "Install Chrome OS VM Manager"
+5. App now appears in your Chrome OS app drawer ✅
+
+WINDOWS:
+1. Download and extract
+2. Double-click RUN.bat
+3. App opens in a new window
+4. Click the install button
+5. Done!
+
+LINUX:
+1. Download and extract
+2. Run: chmod +x RUN.sh && ./RUN.sh
+3. App opens
+4. Click install button
+5. Done!
+
+macOS:
+1. Download and extract
+2. Double-click RUN.command
+3. App opens
+4. Click install button
+5. Done!
+
+
+WHAT IS THIS?
+================================================================================
+
+This is a **Progressive Web App (PWA)** - a real app that:
+
+✅ Installs like native software
+✅ Shows in your app drawer / dock
+✅ Works offline (with cached data)
+✅ No dependencies or installations needed
+✅ One-click launch from your desktop
+✅ Updates automatically
+✅ Native Chrome OS integration
+
+
+SYSTEM REQUIREMENTS
+================================================================================
+
+- OS: Chrome OS, Windows, macOS, or Linux
+- RAM: 2GB minimum (4GB recommended)
+- Disk Space: 300MB
+- **No additional software needed**
+
+
+FEATURES
+================================================================================
+
+✨ Progressive Web App
+   • Installs like a native app
+   • Runs with minimal resources
+   • Works offline with cached data
+
+🎨 Beautiful Interface
+   • Modern, responsive design
+   • Works on any screen size
+   • Chrome OS optimized
+
+⚡ Fast & Lightweight
+   • Instant launch
+   • Minimal disk space
+   • No bloat or dependencies
+
+🔒 Secure
+   • Runs locally on your computer
+   • No cloud uploads
+   • Complete privacy
+
+
+INSTALLING THE APP (Chrome OS)
+================================================================================
+
+Once running, install as native app:
+
+Method 1: Browser Install Button
+   1. App opens at http://localhost:5000
+   2. Look for install button (often in address bar)
+   3. Click and confirm
+   4. App appears in app drawer
+
+Method 2: Chrome Menu
+   1. While app is open, click ⋮ (menu)
+   2. Select "Install Chrome OS VM Manager"
+   3. Confirm installation
+   4. App ready to use from app drawer
+
+After that, the app launches like any other program!
+
+
+TROUBLESHOOTING
+================================================================================
+
+App won't launch?
+  1. Make sure RUN.sh or RUN.bat ran completely
+  2. Check that http://localhost:5000 is accessible
+  3. Try again in 5 seconds
+
+Can't install as app?
+  - Try using Chrome menu instead of install button
+  - Or wait a few seconds and refresh the page
+
+Port 5000 in use?
+  - Edit .env file and change PORT to 5001 or 5002
+  - Then restart the app
+
+
+REMOVING THE APP
+================================================================================
+
+Chrome OS:
+1. Right-click the app in app drawer
+2. Select "Uninstall"
+
+Other Systems:
+1. The app is in your Downloads folder
+2. Delete the extracted folder anytime
+3. The app is completely local - no system files to clean up
+
+
+For more help:
+================================================================================
+
+GitHub Issues: https://github.com/sketchloop/VMware/issues
+Documentation: See docs/ folder
+
+
+================================================================================
+✨ That's It! ✨
+
+Enjoy your native Chrome OS app!
+
+================================================================================
+Version: 1.0.0 - Native PWA
+License: MIT
+Last Updated: February 2026
+================================================================================

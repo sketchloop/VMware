@@ -1,0 +1,17 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './App.css';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+
+// App component placeholder for initial render
+const Index = () => (
+  <div style={{ textAlign: 'center', padding: '2rem' }}>
+    <h1>Chrome OS VM Manager</h1>
+    <p>Initializing...</p>
+  </div>
+);
+
+root.render(<Index />);
